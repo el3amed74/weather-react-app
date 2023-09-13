@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+
+.Top {
+  text-align: center;
+  width: 607px;
+  height: 405px;
+  margin: auto;
+  margin-top: 70px;
+  background-image: linear-gradient(180deg, #130754 0%, #2b2f81 100%);
+  border-radius: 25px;
+  
+}
+
+.RootForcast {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid black; */
+  margin-bottom: 40px;
+}
+@media screen and (max-width:767px) {
+  .Top{
+    width: 320px;
+  }
+}
