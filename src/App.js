@@ -1,14 +1,15 @@
 import './App.css';
+import Animation from './Components/Animation';
 import Forcast from './Components/forcast';
 import Search from './Components/search';
 import Today from './Components/today';
-
 import { useState } from "react"
 
 function App() {
 
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forcastWeather, setForcastWeather] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleOnSearchChange = (searchData) => {
     let apiKey = "dfd81348aaa5f07b4f17833a13b0cb4b";
@@ -24,22 +25,31 @@ function App() {
         const forcastResponse = await response[1].json();
         setCurrentWeather(weatherResponse);
         setForcastWeather(forcastResponse);
+        setLoading(false);
 
-        console.log(currentWeather);
-        console.log(forcastWeather);
       })
       .catch(console.log);
-
+    setLoading(true);
   }
   return (
+
     <div className="RootContainer">
       <div className=" Top">
-        <Search onSearchChange={handleOnSearchChange} />
-        {currentWeather && <Today data={currentWeather} />}
+        {
+          loading ? (<Animation />) :
+            (
+              <>
+                <Search onSearchChange={handleOnSearchChange} />
+                {currentWeather && <Today data={currentWeather} />}
+              </>
+            )
+        }
+
+
       </div>
+
       <div className='RootForcast'>
         {forcastWeather && <Forcast data={forcastWeather} />}
-
       </div>
 
     </div>

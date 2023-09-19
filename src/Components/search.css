@@ -18,8 +18,9 @@ input {
     outline: none;
     border-radius: 40px;
     padding-left: 40px;
-    font-size: 15px;
-    color: #626262;
+    font-size: 19px;
+    color: black;
+
 }
 
 .img {

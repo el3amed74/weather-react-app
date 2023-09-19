@@ -12,7 +12,7 @@ const Search = ({ onSearchChange }) => {
     }
     return (
         <form>
-            <input type="text" id="search" placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
+            <input type="text" id="search" placeholder="Cairo" onChange={(e) => setSearch(e.target.value)} />
             <div className="img" onClick={handleOnChange}>
                 <img src={searchIcon} alt="search" width="20px" />
             </div>
